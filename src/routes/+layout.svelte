@@ -66,7 +66,7 @@
 				// Add a listener to release the wake lock when the page is unloaded
 				wakeLock.addEventListener('release', () => {
 					// the wake lock has been released
-					console.log('Wake Lock released');
+					// console.log('Wake Lock released');
 				});
 			}
 		};
@@ -85,7 +85,7 @@
 		let backendConfig = null;
 		try {
 			backendConfig = await getBackendConfig();
-			console.log('Backend config:', backendConfig);
+			// console.log('Backend config:', backendConfig);
 		} catch (error) {
 			console.error('Error loading backend config:', error);
 		}
@@ -116,18 +116,18 @@
 				});
 
 				_socket.on('connect', () => {
-					console.log('connected');
+					// console.log('connected');
 				});
 
 				await socket.set(_socket);
 
 				_socket.on('user-count', (data) => {
-					console.log('user-count', data);
+					// console.log('user-count', data);
 					activeUserCount.set(data.count);
 				});
 
 				_socket.on('usage', (data) => {
-					console.log('usage', data);
+					// console.log('usage', data);
 					USAGE_POOL.set(data['models']);
 				});
 
